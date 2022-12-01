@@ -6,10 +6,14 @@ server:
       min-spare: 30
     connection-timeout: 5000ms
   port: 8080
-  #servlet:
-    #context-path: /demo
+  servlet:
+    context-path: /firstproject
 
 spring:
+  mybatis:
+    mapper-locations: classpath*:mapper/*.xml
+    type-aliases-package: xyz.zach7777.firstproject.pojo
+
   #MySQL数据源
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
@@ -17,7 +21,7 @@ spring:
       driver-class-name: com.mysql.cj.jdbc.Driver
       url: jdbc:mysql://192.168.31.123:3306/bootdemo?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
       username: root
-      password: *
+      password: szk@0313921X
       initial-size: 8
       max-active: 16
       min-idle: 8
