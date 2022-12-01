@@ -8,6 +8,12 @@ import java.util.List;
 
 @Mapper
 @Repository
-public interface userMapper {
+public interface UserMapper {
     List<User> get(User user);
+
+    void add(User user);
+
+    void delete(User user);
+
+    void put(User user);
 }

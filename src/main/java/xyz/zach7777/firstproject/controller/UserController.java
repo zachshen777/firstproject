@@ -1,6 +1,6 @@
 package xyz.zach7777.firstproject.controller;
 
-import com.alibaba.druid.support.json.JSONUtils;
+import com.alibaba.fastjson.JSON;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import xyz.zach7777.firstproject.pojo.User;
@@ -17,7 +17,21 @@ public class UserController {
     @GetMapping("/")
     public String get(@RequestBody User user) {
         List<User> list = userService.get(user);
-        return JSONUtils.toJSONString(list);
+        return JSON.toJSONString(list);
+    }
+    @PostMapping("/")
+    public void add(@RequestBody User user) {
+        userService.add(user);
+    }
+
+    @DeleteMapping("/")
+    public void delete(@RequestBody User user) {
+        userService.delete(user);
+    }
+
+    @PutMapping("/")
+    public void put(@RequestBody User user) {
+        userService.put(user);
     }
 
 
